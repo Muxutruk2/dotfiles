@@ -2,6 +2,8 @@ if status is-interactive
     set EDITOR /usr/bin/nvim
 end
 
+set XDG_PICTURES_DIR $HOME/Pictures
+
 alias pbcopy='xsel --clipboard --input'
 alias pbpaste='xsel --clipboard --output'
 
