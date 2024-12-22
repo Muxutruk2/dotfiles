@@ -24,8 +24,8 @@ return {
   },
 
   {
-    "github/copilot.vim"
-  }
+    "github/copilot.vim",
+  },
 
   -- change some telescope options and a keymap to browse plugin files
   {
