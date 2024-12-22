@@ -5,6 +5,9 @@ end
 alias pbcopy='xsel --clipboard --input'
 alias pbpaste='xsel --clipboard --output'
 
+# Chezmoi edit dotfiles
+alias config="chezmoi edit; chezmoi apply"
+
 # Fish Shell Specific
 alias conffish='nvim ~/.config/fish/config.fish' # Open Fish configuration
 alias conffishfuncs='nvim ~/.config/fish/functions/' # Open Fish functions directory
