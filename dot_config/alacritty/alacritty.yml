@@ -1,0 +1,31 @@
+env:
+  TERM: xterm-256color
+
+window:
+  padding:
+    x: 5
+    y: 1
+
+  decorations: full
+
+  title: Alacritty
+
+  dynamic_title: true
+
+scrolling:
+  history: 10000
+  size: 12
+
+shell:
+  program: /usr/bin/fish
+  args:
+    - -l
+    - -c
+    - "tmux attach || tmux"
+
+mouse_bindings:
+  - { mouse: Middle, action: PasteSelection }
+
+key_bindings:
+  - { key: V, mods: Alt, action: Paste }
+  - { key: C, mods: Alt, action: Copy }
