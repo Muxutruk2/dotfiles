@@ -8,13 +8,18 @@ return {
   -- add gruvbox
   { "ellisonleao/gruvbox.nvim" },
 
-  -- Configure LazyVim to load gruvbox
-  {
-    "LazyVim/LazyVim",
-    opts = {
-      colorscheme = "gruvbox",
-    },
-  },
+  require("gruvbox")
+    .setup({
+      transparent_mode = true,
+    })
+    (
+    -- Configure LazyVim to load gruvbox
+{
+      "LazyVim/LazyVim",
+      opts = {
+        colorscheme = "gruvbox",
+      },
+    }),
 
   -- change trouble config
   {
