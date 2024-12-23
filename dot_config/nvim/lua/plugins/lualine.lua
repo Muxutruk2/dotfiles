@@ -3,12 +3,17 @@
 
 return {
   "nvim-lualine/lualine.nvim",
-  event = "VeryLazy",
-  opts = function(_, opts)
-    table.insert(opts.sections.lualine_x, {
-      function()
-        return "😄"
-      end,
+  event = "VeryLazy", -- Ensures it loads lazily
+  config = function()
+    require("lualine").setup({
+      sections = {
+        lualine_x = {
+          function()
+            return "😄"
+          end,
+        },
+        -- You can add other sections or customize them as needed
+      },
     })
   end,
 }
