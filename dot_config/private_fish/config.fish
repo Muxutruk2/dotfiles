@@ -1,5 +1,6 @@
 if status is-interactive
     set EDITOR /usr/bin/nvim
+    set -U fish_greeting
 end
 
 set XDG_PICTURES_DIR $HOME/Pictures
