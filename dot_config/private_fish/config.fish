@@ -3,6 +3,7 @@ if status is-interactive
 end
 
 set XDG_PICTURES_DIR $HOME/Pictures
+set QT_QPA_PLATFORMTHEME qt5ct
 
 alias pbcopy='xsel --clipboard --input'
 alias pbpaste='xsel --clipboard --output'
