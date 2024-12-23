@@ -37,6 +37,23 @@ return {
     },
   },
 
+  {
+    "gitsigns.nvim",
+    opts = {
+      setup = function()
+        require("gitsigns").setup({
+          signs = {
+            add = { hl = "GitSignsAdd", text = "▋" },
+            change = { hl = "GitSignsChange", text = "▋" },
+            delete = { hl = "GitSignsDelete", text = "▋" },
+            topdelete = { hl = "GitSignsDelete", text = "▔" },
+            changedelete = { hl = "GitSignsChange", text = "▋" },
+          },
+        })
+      end,
+    },
+  },
+
   -- Configure LazyVim to load gruvbox
   {
     "LazyVim/LazyVim",
