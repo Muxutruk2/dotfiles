@@ -7,6 +7,8 @@ set XDG_PICTURES_DIR $HOME/Pictures
 set -x QT_QPA_PLATFORMTHEME qt5ct
 set -U async_prompt_functions fish_prompt
 
+fish_hybrid_key_bindings # Vim mod with default fish bindings
+
 alias pbcopy='xsel --clipboard --input'
 alias pbpaste='xsel --clipboard --output'
 
