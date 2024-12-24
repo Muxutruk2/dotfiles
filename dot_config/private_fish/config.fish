@@ -9,23 +9,23 @@ set -x QT_QPA_PLATFORMTHEME qt5ct
 alias pbcopy='xsel --clipboard --input'
 alias pbpaste='xsel --clipboard --output'
 
-# Chezmoi edit dotfiles
-alias config="chezmoi edit; chezmoi apply"
+alias confalacritty="$EDITOR ~/.local/share/chezmoi/dot_config/alacritty"
+alias confhypr="$EDITOR ~/.local/share/chezmoi/dot_config/hypr"
+alias confnvim="$EDITOR ~/.local/share/chezmoi/dot_config/nvim"
+alias conffish="$EDITOR ~/.local/share/chezmoi/dot_config/private_fish"
+alias confwaybar="$EDITOR ~/.local/share/chezmoi/dot_config/waybar/config.jsonc"
+alias confwaybarcss="$EDITOR ~/.local/share/chezmoi/dot_config/waybar/style.css"
 
-# Fish Shell Specific
-alias conffish='nvim ~/.config/fish/config.fish' # Open Fish configuration
-alias conffishfuncs='nvim ~/.config/fish/functions/' # Open Fish functions directory
+function chezcommit
+    git -C ~/.local/share/chezmoi add dot_config
+    git -C ~/.local/share/chezmoi commit
+    git -C ~/.local/share/chezmoi push
+end
 
-# Kitty Terminal
-alias confkitty='nvim ~/.config/kitty/kitty.conf' # Open Kitty configuration
-alias confalacritty='nvim ~/.config/alacritty/alacritty.yml'
-
-# Neovim
-alias confnvim='nvim ~/.config/nvim/init.vim' # Open Neovim configuration
-alias confnvimlua='nvim ~/.config/nvim/lua/plugins/init.lua' # Open Neovim Lua plugins config
-
-# Neovim Plugins
-alias confnvimplugins='nvim ~/.config/nvim/lua/plugins/' # Open Neovim plugins directory
+function cheztest
+    chezmoi diff
+    chezmoi apply
+end
 
 alias py="python3"
 alias python="python"
