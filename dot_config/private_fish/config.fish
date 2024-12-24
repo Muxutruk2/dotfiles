@@ -3,11 +3,11 @@ if status is-interactive
     set -U fish_greeting
 end
 
+fish_hybrid_key_bindings # Vim mod with default fish bindings
+
 set XDG_PICTURES_DIR $HOME/Pictures
 set -x QT_QPA_PLATFORMTHEME qt5ct
 set -U async_prompt_functions fish_prompt
-
-fish_hybrid_key_bindings # Vim mod with default fish bindings
 
 alias pbcopy='xsel --clipboard --input'
 alias pbpaste='xsel --clipboard --output'
@@ -32,19 +32,3 @@ end
 
 alias py="python3"
 alias python="python"
-
-function run
-    if test -f $argv[1]
-        set filename $argv[1]
-        set output (basename $filename .c)
-        gcc $filename -o $output -lm
-
-        if test $status -eq 0
-            ./$output
-        else
-            echo "Compilation failed."
-        end
-    else
-        echo "File '$argv[1]' does not exist."
-    end
-end
