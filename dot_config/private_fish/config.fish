@@ -3,6 +3,11 @@ if status is-interactive
     set -U fish_greeting
 end
 
+status is-interactive; and begin
+    set fish_tmux_autostart true
+end
+
+
 fish_hybrid_key_bindings # Vim mod with default fish bindings
 
 set XDG_PICTURES_DIR $HOME/Pictures
