@@ -9,6 +9,8 @@ end
 
 theme_gruvbox dark
 
+set -g bg 1c/1f/26
+
 fish_hybrid_key_bindings # Vim mod with default fish bindings
 
 set XDG_PICTURES_DIR $HOME/Pictures
