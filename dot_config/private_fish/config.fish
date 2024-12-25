@@ -7,6 +7,7 @@ status is-interactive; and begin
     set fish_tmux_autostart true
 end
 
+theme_gruvbox dark
 
 fish_hybrid_key_bindings # Vim mod with default fish bindings
 
@@ -23,6 +24,7 @@ alias confnvim="$EDITOR ~/.local/share/chezmoi/dot_config/nvim"
 alias conffish="$EDITOR ~/.local/share/chezmoi/dot_config/private_fish"
 alias confwaybar="$EDITOR ~/.local/share/chezmoi/dot_config/waybar/config.jsonc"
 alias confwaybarcss="$EDITOR ~/.local/share/chezmoi/dot_config/waybar/style.css"
+alias conftmux="$EDITOR ~/.local/share/chezmoi/dot_tmux.conf"
 
 function chezcommit
     git -C ~/.local/share/chezmoi add dot_config
