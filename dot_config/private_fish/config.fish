@@ -1,10 +1,5 @@
 if status is-interactive
     set EDITOR /usr/bin/nvim
-    set -U fish_greeting
-end
-
-status is-interactive; and begin
-    set fish_tmux_autostart true
 end
 
 theme_gruvbox dark
@@ -13,6 +8,7 @@ set -g bg 1c/1f/26
 
 fish_hybrid_key_bindings # Vim mod with default fish bindings
 
+set -U fish_greeting
 set XDG_PICTURES_DIR $HOME/Pictures
 set -x QT_QPA_PLATFORMTHEME qt5ct
 set -U async_prompt_functions fish_prompt
