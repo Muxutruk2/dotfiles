@@ -27,6 +27,7 @@ alias conffish="$EDITOR ~/.local/share/chezmoi/dot_config/private_fish"
 alias confwaybar="$EDITOR ~/.local/share/chezmoi/dot_config/waybar/config.jsonc"
 alias confwaybarcss="$EDITOR ~/.local/share/chezmoi/dot_config/waybar/style.css"
 alias conftmux="$EDITOR ~/.local/share/chezmoi/dot_tmux.conf"
+alias confghostty="$EDITOR ~/.local/share/chezmoi/dot_config/ghostty/config"
 
 function chezcommit
     git -C ~/.local/share/chezmoi add dot_config
