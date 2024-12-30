@@ -1,11 +1,12 @@
-font-family = CaskaydiaCove Nerd Font Mono
+font-family = "CaskaydiaCove Nerd Font Mono"
 font-size = 15
 theme = GruvboxDarkHard
 shell-integration-features = no-cursor,sudo,no-title
 cursor-style = block
 adjust-cell-height = 35%
 background-opacity = 0.90
-window-decoration = false
+window-decoration = true
+gtk-titlebar = false
 
 mouse-hide-while-typing = true
 mouse-scroll-multiplier = 1.5
