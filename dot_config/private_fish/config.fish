@@ -8,7 +8,11 @@ set -g bg 1c/1f/26
 
 fish_hybrid_key_bindings # Vim mod with default fish bindings
 
-set -U fish_greeting
+if type -q fortune
+    set -U fish_greeting (fortune)
+else
+    set -U fish_greeting
+end
 set XDG_PICTURES_DIR $HOME/Pictures
 set -x QT_QPA_PLATFORMTHEME qt5ct
 set -U async_prompt_functions fish_prompt
