@@ -23,6 +23,9 @@ if test -f "$HOME/.cargo/env.fish"
     source "$HOME/.cargo/env.fish"
 end
 
+if test ! -f "$HOME/.tmux/plugins/tpm/tpm"
+    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+end
 
 alias pbcopy='xsel --clipboard --input'
 alias pbpaste='xsel --clipboard --output'
