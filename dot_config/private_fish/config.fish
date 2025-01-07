@@ -14,6 +14,7 @@ else
     set -U fish_greeting
 end
 set XDG_PICTURES_DIR $HOME/Pictures
+set XDG_CONFIG_DIRS "$HOME/.config"
 set -x QT_QPA_PLATFORMTHEME qt5ct
 set -U async_prompt_functions fish_prompt
 
