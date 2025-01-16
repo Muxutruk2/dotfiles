@@ -19,6 +19,7 @@ set -x QT_QPA_PLATFORMTHEME qt5ct
 set -U async_prompt_functions fish_prompt
 
 fish_add_path $HOME/.cargo/bin
+fish_add_path $HOME/.local/bin
 if test -f "$HOME/.cargo/env.fish"
     source "$HOME/.cargo/env.fish"
 end
