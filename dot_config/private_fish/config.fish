@@ -2,8 +2,6 @@ if status is-interactive
     set EDITOR /usr/bin/nvim
 end
 
-theme_gruvbox dark
-
 set -g bg 1c/1f/26
 
 fish_hybrid_key_bindings # Vim mod with default fish bindings
@@ -22,6 +20,10 @@ fish_add_path $HOME/.cargo/bin
 fish_add_path $HOME/.local/bin
 if test -f "$HOME/.cargo/env.fish"
     source "$HOME/.cargo/env.fish"
+end
+
+if test -d "$HOME/.config/emacs/bin"
+    fish_add_path "$HOME/.config/emacs/bin"
 end
 
 if test ! -f "$HOME/.tmux/plugins/tpm/tpm"
