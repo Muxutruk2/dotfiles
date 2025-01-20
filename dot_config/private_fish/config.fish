@@ -3,6 +3,7 @@ if status is-interactive
 end
 
 set -g bg 1c/1f/26
+set -g TERM xterm-256color
 
 fish_hybrid_key_bindings # Vim mod with default fish bindings
 
