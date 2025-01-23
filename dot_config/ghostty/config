@@ -4,7 +4,7 @@ theme = GruvboxDarkHard
 shell-integration-features = no-cursor,sudo,no-title
 cursor-style = block
 adjust-cell-height = 35%
-background-opacity = 0.90
+background-opacity = 1.00
 window-decoration = true
 gtk-titlebar = false
 

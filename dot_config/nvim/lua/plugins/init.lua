@@ -10,4 +10,5 @@ return {
   require("plugins.lualine"),
   require("plugins.trouble"),
   require("plugins.mason"),
+  require("plugins.harpoon"),
 }
