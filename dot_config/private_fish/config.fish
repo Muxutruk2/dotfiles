@@ -7,6 +7,9 @@ set -g TERM xterm-256color
 
 fish_hybrid_key_bindings # Vim mod with default fish bindings
 
+# Add git to tide prompt
+set --universal tide_git_indicator detailed
+
 if type -q fortune
     set -U fish_greeting (fortune)
 else
