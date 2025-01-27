@@ -38,13 +38,14 @@ alias pbcopy='xsel --clipboard --input'
 alias pbpaste='xsel --clipboard --output'
 
 alias confalacritty="$EDITOR ~/.local/share/chezmoi/dot_config/alacritty"
+alias confghostty="$EDITOR ~/.local/share/chezmoi/dot_config/ghostty/config"
+alias confwezterm="$EDITOR ~/.local/share/chezmoi/dot_config/wezterm/wezterm.lua"
 alias confhypr="$EDITOR ~/.local/share/chezmoi/dot_config/hypr"
 alias confnvim="$EDITOR ~/.local/share/chezmoi/dot_config/nvim"
 alias conffish="$EDITOR ~/.local/share/chezmoi/dot_config/private_fish"
 alias confwaybar="$EDITOR ~/.local/share/chezmoi/dot_config/waybar/config.jsonc"
 alias confwaybarcss="$EDITOR ~/.local/share/chezmoi/dot_config/waybar/style.css"
 alias conftmux="$EDITOR ~/.local/share/chezmoi/dot_tmux.conf"
-alias confghostty="$EDITOR ~/.local/share/chezmoi/dot_config/ghostty/config"
 
 function chezcommit
     git -C ~/.local/share/chezmoi add dot_config
