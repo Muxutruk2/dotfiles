@@ -16,6 +16,8 @@ wezterm.on("gui-attached", function(_)
 	end
 end)
 
+config.window_close_confirmation = "AlwaysPrompt"
+
 -- Program
 config.default_prog = { "/usr/bin/fish" }
 
