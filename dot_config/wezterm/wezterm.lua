@@ -27,12 +27,12 @@ config.color_scheme = "Gruvbox Dark (Gogh)"
 config.window_background_gradient = {
 	orientation = "Vertical",
 	colors = {
-		"#282828",
-		"#282828",
-		"#3C3836",
+		"#32302F",
+		"#1D2021",
 	},
 	interpolation = "Linear",
-	blend = "Rgb",
+	blend = "Oklab",
+	noise = 20,
 }
 -- Lauch Menu
 local launch_menu = {}
