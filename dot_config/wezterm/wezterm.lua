@@ -18,6 +18,8 @@ end)
 
 config.window_close_confirmation = "AlwaysPrompt"
 
+config.max_fps = 75
+
 -- Program
 config.default_prog = { "/usr/bin/fish" }
 
