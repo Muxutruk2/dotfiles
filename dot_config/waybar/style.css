@@ -4,7 +4,7 @@
 }
 
 window#waybar {
-    background-color: #1c1f26;
+    background-color: #282828;
     color: #ffffff;
     transition-property: background-color;
     transition-duration: .5s;
@@ -41,7 +41,7 @@ button:hover {
 .power-saver:hover,
 #battery:hover,
 #clock:hover{
-    background-color: #504945;
+    background-color: #353231;
 }
 
 #workspaces button {
