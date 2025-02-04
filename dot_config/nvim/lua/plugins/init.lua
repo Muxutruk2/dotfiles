@@ -11,4 +11,5 @@ return {
   require("plugins.trouble"),
   require("plugins.mason"),
   require("plugins.harpoon"),
+  require("plugins.nvim-cmp"),
 }
