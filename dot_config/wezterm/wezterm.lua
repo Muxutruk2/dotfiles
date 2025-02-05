@@ -38,6 +38,9 @@ config.window_background_gradient = {
 	blend = "Oklab",
 	noise = 20,
 }
+
+config.window_background_opacity = 0.2
+
 -- Lauch Menu
 local launch_menu = {}
 
