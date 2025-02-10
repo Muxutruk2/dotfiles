@@ -11,8 +11,8 @@ return {
   require("plugins.trouble"),
   require("plugins.mason"),
   require("plugins.harpoon"),
-  require("plugins.nvim-cmp"),
   require("plugins.snacks"),
   require("plugins.neotree"),
   require("plugins.flash"),
+  require("plugins.markdown"),
 }
