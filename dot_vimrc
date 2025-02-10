@@ -1,0 +1,54 @@
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+call plug#begin()
+Plug 'morhetz/gruvbox'
+call plug#end()
+
+syntax on
+filetype indent off
+
+" Set a good-looking colorscheme
+colorscheme gruvbox
+set background=dark
+
+" Better UI
+set number              " Show line numbers
+set relativenumber      " Relative line numbers
+set cursorline          " Highlight current line
+set showcmd             " Show command in bottom bar
+set ruler               " Show cursor position
+set laststatus=2        " Always show status line
+set showmatch           " Highlight matching parenthesis
+
+" Indentation settings
+set tabstop=4
+set shiftwidth=4
+set expandtab
+set autoindent
+set smartindent
+
+" Searching
+set ignorecase
+set smartcase
+set hlsearch
+set incsearch
+
+" Performance
+set lazyredraw          " Improves scrolling performance
+set ttyfast             " Faster redraw
+
+" Key mappings
+nnoremap <Space> :noh<CR>   " Clear search highlights with space
+
+" Save changes automatically when switching files
+set autowrite
+
+" Prevent backup/swap clutter
+set nobackup
+set nowritebackup
+set noswapfile
+
