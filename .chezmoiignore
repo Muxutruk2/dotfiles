@@ -1,2 +1,16 @@
 README.md
 
+.config/fish/fish_history
+
+.config/fish/fishd.*
+
+# Exclude Fisher plugins (manage them via Fisherfile)
+.config/fish/functions/fisher.fish
+.config/fish/completions/fisher.fish
+.config/fish/functions/tide.fish
+.config/fish/completions/tide.fish
+
+.local/share/fish/
+.cache/fish/
+
+
