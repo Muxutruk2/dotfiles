@@ -4,11 +4,8 @@ README.md
 
 .config/fish/fishd.*
 
-# Exclude Fisher plugins (manage them via Fisherfile)
-.config/fish/functions/fisher.fish
-.config/fish/completions/fisher.fish
-.config/fish/functions/tide.fish
-.config/fish/completions/tide.fish
+# Exclude plugins (manage them via Fisherfile)
+.config/fish/functions/
 
 .local/share/fish/
 .cache/fish/
