@@ -21,6 +21,7 @@ set tabclosefocus=right
 set tabreopenposition=previous
 set useragent=%firefox
 :command homepage <:open http://localhost:8080>
+:homepage
 
 " Mappings
 nmap <F3> <toSearchMode><nextSearchMatch>
