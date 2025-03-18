@@ -1,0 +1,64 @@
+server:
+  port: 8080
+  host: localhost
+theme:
+  background-color: 0 0 16
+  primary-color: 43 59 81
+  positive-color: 61 66 44
+  negative-color: 6 96 59
+pages:
+  - name: Home
+    # Optionally, if you only have a single page you can hide the desktop navigation for a cleaner look
+    # hide-desktop-navigation: true
+    columns:
+      - size: small
+        widgets:
+          - type: calendar
+            first-day-of-week: monday
+
+          - type: twitch-channels
+            channels:
+              - theprimeagen
+              - tsoding
+
+      - size: full
+        widgets:
+          - type: group
+            widgets:
+
+          - type: videos
+            channels:
+              - UCXuqSBlHAE6Xw-yeJA0Tunw # Linus Tech Tips
+              - UCsBjURrPoezykLs9EqgamOA # Fireship
+
+      - size: small
+        widgets:
+          - type: weather
+            location: Vienna, Austria
+            units: metric
+            hour-format: 12h
+            hide-location: true
+
+
+          - type: releases
+            cache: 1d
+            repositories:
+              - glanceapp/glance
+              - go-gitea/gitea
+              - immich-app/immich
+              - syncthing/syncthing
+
+  # Add more pages here:
+  # - name: Your page name
+  #   columns:
+  #     - size: small
+  #       widgets:
+  #         # Add widgets here
+
+  #     - size: full
+  #       widgets:
+  #         # Add widgets here
+
+  #     - size: small
+  #       widgets:
+  #         # Add widgets here
