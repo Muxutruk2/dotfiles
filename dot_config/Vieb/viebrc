@@ -2,7 +2,7 @@
 set adblocker=update
 set sponsorblock=true
 set darkreader=true
-set darkreaderblocklist=["youtube.com"]
+set darkreaderblocklist=["youtube", "chatgpt", "google", "mail.google.com", "github"]
 set devtoolsposition=split
 set dialogalert=show
 set dialogconfirm=show
@@ -21,6 +21,21 @@ set splitbelow
 set tabclosefocus=right
 set tabreopenposition=previous
 set useragent=%firefox
+set downloadmethod=confirm
+set mintabwidth=100
+set nomousenewtabswitch
+set permissioncamera=ask
+set permissiondisplaycapture=ask
+set permissionmediadevices=allow
+set permissionmicrophone=ask
+set permissionpersistentstorage=allow
+set redirects&
+set redirects+=^https?://(www\.)?(reddit\.com.*)~https://old.$2
+set suspendonrestore=regular
+"set tabclosefocusright
+set windowtitle=title
+colorscheme gruvbox
+
 :command homepage <:open http://localhost:8080>
 :homepage
 
