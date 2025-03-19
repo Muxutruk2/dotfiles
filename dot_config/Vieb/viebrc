@@ -2,6 +2,7 @@
 set adblocker=update
 set sponsorblock=true
 set darkreader=true
+set darkreaderblocklist=["youtube.com"]
 set devtoolsposition=split
 set dialogalert=show
 set dialogconfirm=show
