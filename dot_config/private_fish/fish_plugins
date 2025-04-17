@@ -1,5 +1,7 @@
 jorgebucaran/fisher
-franciscolourenco/done
-acomagu/fish-async-prompt
-budimanjojo/tmux.fish
-kidonng/zoxide.fish
+ilancosman/tide@v6
+jethrokuan/z
+patrickf1/fzf.fish
+nickeb96/puffer-fish
+laughedelic/pisces
+oh-my-fish/plugin-grc

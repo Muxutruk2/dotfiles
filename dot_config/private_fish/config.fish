@@ -1,61 +1,49 @@
-if status is-interactive
-    set EDITOR /usr/bin/nvim
+function silent_add_path
+    for dir in $argv
+        test -d $dir; and fish_add_path $dir
+    end
+end
+
+function if_command_run
+    set -l cmd $argv[1]
+    set -e argv[1]
+
+    type -q $cmd; and eval $argv
+end
+
+function source_if_exists
+    if test -f $argv[1]
+        source $argv[1]
+    end
+end
+
+function git_clone_if_not_exists
+    if test ! -f $argv[1]
+        git clone $argv[2]
+    end
 end
 
 fish_hybrid_key_bindings # Vim mod with default fish bindings
 
-if type -q fortune
-    set -U fish_greeting (fortune)
-else
-    set -U fish_greeting
-end
+# XDG config
+set -x XDG_CONFIG_HOME "$HOME/.config"
+set -x XDG_CACHE_HOME "$HOME/.cache"
+set -x XDG_DATA_HOME "$HOME/.local/share"
+set -x XDG_STATE_HOME "$HOME/.local/state"
+set -x XDG_DESKTOP_DIR "$HOME/Desktop"
+set -x XDG_DOCUMENTS_DIR "$HOME/Documents"
+set -x XDG_DOWNLOAD_DIR "$HOME/Downloads"
+set -x XDG_MUSIC_DIR "$HOME/Music"
+set -x XDG_PICTURES_DIR "$HOME/Pictures"
+set -x XDG_PUBLICSHARE_DIR "$HOME/Public"
+set -x XDG_TEMPLATES_DIR "$HOME/Templates"
+set -x XDG_VIDEOS_DIR "$HOME/Videos"
 
-set XDG_PICTURES_DIR $HOME/Pictures
-set XDG_CONFIG_DIRS "$HOME/.config"
+# QT Config
 set -x QT_QPA_PLATFORMTHEME qt5ct
 
-fish_add_path $HOME/.cargo/bin
-fish_add_path $HOME/.local/bin
-
-if test -f "$HOME/.cargo/env.fish"
-    source "$HOME/.cargo/env.fish"
-end
-
-if test -d "$HOME/.config/emacs/bin"
-    fish_add_path "$HOME/.config/emacs/bin"
-end
-
-if test ! -f "$HOME/.tmux/plugins/tpm/tpm"
-    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-end
-
-if test -f "$HOME/.config/fish/aliases.fish"
-    source "$HOME/.config/fish/aliases.fish"
-end
-
-alias pbcopy='xsel --clipboard --input'
-alias pbpaste='xsel --clipboard --output'
-
-alias confalacritty="$EDITOR ~/.local/share/chezmoi/dot_config/alacritty"
-alias confghostty="$EDITOR ~/.local/share/chezmoi/dot_config/ghostty/config"
-alias confwezterm="$EDITOR ~/.local/share/chezmoi/dot_config/wezterm/wezterm.lua"
-alias confhypr="$EDITOR ~/.local/share/chezmoi/dot_config/hypr"
-alias confnvim="$EDITOR ~/.local/share/chezmoi/dot_config/nvim"
-alias conffish="$EDITOR ~/.local/share/chezmoi/dot_config/private_fish"
-alias confwaybar="$EDITOR ~/.local/share/chezmoi/dot_config/waybar/config.jsonc"
-alias confwaybarcss="$EDITOR ~/.local/share/chezmoi/dot_config/waybar/style.css"
-alias conftmux="$EDITOR ~/.local/share/chezmoi/dot_tmux.conf"
-
-function chezcommit
-    git -C ~/.local/share/chezmoi add dot_config
-    git -C ~/.local/share/chezmoi commit
-    git -C ~/.local/share/chezmoi push
-end
-
-function cheztest
-    chezmoi diff
-    chezmoi apply
-end
-
-alias py="python3"
-alias python="python"
+silent_add_path "$HOME/.cargo/bin" "$HOME/.local/bin" "$HOME/.config/emacs/bin"
+if_command_run pyenv 'pyenv init - | source'
+source_if_exists "$HOME/.cargo/env.fish"
+source_if_exists "$HOME/.config/fish/aliases.fish"
+git_clone_if_not_exists "$HOME/.tmux/plugins/tpm/tpm" "https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm"
