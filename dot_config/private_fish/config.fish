@@ -1,15 +1,4 @@
-function silent_add_path
-    for dir in $argv
-        test -d $dir; and fish_add_path $dir
-    end
-end
-
-function if_command_run
-    set -l cmd $argv[1]
-    set -e argv[1]
-
-    type -q $cmd; and eval $argv
-end
+set -g fish_greeting ""
 
 function source_if_exists
     if test -f $argv[1]
@@ -17,13 +6,7 @@ function source_if_exists
     end
 end
 
-function git_clone_if_not_exists
-    if test ! -f $argv[1]
-        git clone $argv[2]
-    end
-end
-
-fish_hybrid_key_bindings # Vim mod with default fish bindings
+source_if_exists "$HOME/.config/fish/aliases.fish"
 
 # XDG config
 set -x XDG_CONFIG_HOME "$HOME/.config"
@@ -44,6 +27,6 @@ set -x QT_QPA_PLATFORMTHEME qt5ct
 
 silent_add_path "$HOME/.cargo/bin" "$HOME/.local/bin" "$HOME/.config/emacs/bin"
 if_command_run pyenv 'pyenv init - | source'
+if_command_run fish_hybrid_key_bindings fish_hybrid_key_bindings
 source_if_exists "$HOME/.cargo/env.fish"
-source_if_exists "$HOME/.config/fish/aliases.fish"
 git_clone_if_not_exists "$HOME/.tmux/plugins/tpm/tpm" "https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm"
