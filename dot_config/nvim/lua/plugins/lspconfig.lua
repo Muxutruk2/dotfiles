@@ -2,11 +2,9 @@
 -- LSP setup
 
 return {
-  "neovim/nvim-lspconfig",
-  opts = {
-    servers = {
-      pyright = {},
-      jdtls = {},
+    "neovim/nvim-lspconfig",
+    opts = {
+        servers = {
+        },
     },
-  },
 }
