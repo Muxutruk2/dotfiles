@@ -8,6 +8,19 @@ end
 
 source_if_exists "$HOME/.config/fish/aliases.fish"
 
+if is_no_de
+    function fish_prompt
+        set_color green
+        printf "%s@%s %s ~> " (whoami) (hostname) (pwd)
+        set_color normal
+    end
+end
+
+# Tide config
+set -x tide_pwd_color_anchors b5d607
+set -x tide_pwd_color_dirs c0b341
+set -x tide_pwd_icon_home ''
+
 # XDG config
 set -x XDG_CONFIG_HOME "$HOME/.config"
 set -x XDG_CACHE_HOME "$HOME/.cache"
