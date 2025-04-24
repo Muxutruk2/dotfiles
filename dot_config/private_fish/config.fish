@@ -16,6 +16,8 @@ if is_no_de
     end
 end
 
+set -x EDITOR nvim
+
 # Tide config
 set -x tide_pwd_color_anchors b5d607
 set -x tide_pwd_color_dirs c0b341
