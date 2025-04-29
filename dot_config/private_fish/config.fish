@@ -43,5 +43,6 @@ set -x QT_QPA_PLATFORMTHEME qt5ct
 silent_add_path "$HOME/.cargo/bin" "$HOME/.local/bin" "$HOME/.config/emacs/bin"
 if_command_run pyenv 'pyenv init - | source'
 if_command_run fish_hybrid_key_bindings fish_hybrid_key_bindings
+# if_command_run tide "tide configure --auto --style=Lean --prompt_colors='True color' --show_time=No --lean_prompt_height='One line' --prompt_spacing=Sparse --icons='Few icons' --transient=Yes"
 source_if_exists "$HOME/.cargo/env.fish"
 git_clone_if_not_exists "$HOME/.tmux/plugins/tpm/tpm" "https://github.com/tmux-plugins/tpm"
