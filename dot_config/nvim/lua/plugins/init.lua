@@ -3,6 +3,7 @@
 
 return {
   require("plugins.colorscheme"),
+  require("plugins.catppuccin"),
   require("plugins.gitsigns"),
   require("plugins.telescope"),
   require("plugins.lspconfig"),

@@ -27,12 +27,12 @@ config.default_prog = { "fish" }
 config.font = wezterm.font("CaskaydiaCove Nerd Font Mono")
 
 -- Color Scheme
-config.color_scheme = "Gruvbox Dark (Gogh)"
+config.color_scheme = "Catppuccin Mocha"
 config.window_background_gradient = {
 	orientation = "Vertical",
 	colors = {
-		"#32302F",
-		"#1D2021",
+		"#1E1E2E",
+		"#181825",
 	},
 	interpolation = "Linear",
 	blend = "Oklab",

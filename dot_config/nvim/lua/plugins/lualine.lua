@@ -3,45 +3,36 @@
 
 return {
   "nvim-lualine/lualine.nvim",
-  event = "VeryLazy", -- Ensures it loads lazily
+  event = "VeryLazy",
+  dependencies = {
+    "catppuccin/nvim", -- Ensure this is installed
+  },
   config = function()
+    require("catppuccin").setup({
+      flavour = "mocha", -- Set the Catppuccin flavor
+    })
+
     require("lualine").setup({
       options = {
-        icons_enabled = true, -- Show icons in the statusline
-        theme = "gruvbox", -- Theme for the statusline (you can replace it with other themes)
+        icons_enabled = true,
+        theme = "catppuccin", -- Use Catppuccin theme
         component_separators = { left = "", right = "" },
         section_separators = { left = "", right = "" },
-        disabled_filetypes = { "dashboard", "NvimTree", "Outline" }, -- Disabled filetypes
-        globalstatus = false, -- Global status line (can be true for a single statusline in the bottom)
+        disabled_filetypes = { "dashboard", "NvimTree", "Outline" },
+        globalstatus = false,
       },
       sections = {
-        lualine_a = { "mode" }, -- Show current mode (normal, insert, etc.)
-        lualine_b = {
-          "branch", -- Git branch
-          "diff", -- Git diff status (added, modified, removed)
-          "diagnostics", -- Show diagnostics (errors, warnings, etc.)
-        },
+        lualine_a = { "mode" },
+        lualine_b = { "branch", "diff", "diagnostics" },
         lualine_c = {
-          {
-            "filename", -- Current file name
-            path = 1, -- Display relative path (0 for full path)
-          },
-          {
-            "filetype", -- File type (e.g., Python, Lua, etc.)
-            colored = true, -- Make the file type colorized
-          },
+          { "filename", path = 1 },
+          { "filetype", colored = true },
         },
-        lualine_x = {
-          "encoding", -- File encoding
-          "fileformat", -- File format (LF, CRLF, etc.)
-          "filetype", -- File type
-        },
-        lualine_y = {
-          "progress", -- Current position in file (line/column)
-        },
-        lualine_z = { "location" }, -- Show current location (line and column)
+        lualine_x = { "encoding", "fileformat", "filetype" },
+        lualine_y = { "progress" },
+        lualine_z = { "location" },
       },
-      extensions = { "fugitive", "nvim-tree", "quickfix" }, -- Enable extensions (e.g., fugitive for git, quickfix for diagnostics)
+      extensions = { "fugitive", "nvim-tree", "quickfix" },
     })
   end,
 }
