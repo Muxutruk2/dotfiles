@@ -36,12 +36,14 @@ end
 if command_exists eza
     and not is_no_de
     alias ls='eza --icons --color=always'
+    alias lls='ls --icons --color=always'
 end
 
 if command_exists bat
     and status is-interactive
     and not is_no_de
     alias cat='bat'
+    alias ccat='command cat'
 end
 
 if command_exists tree
@@ -52,11 +54,26 @@ if command_exists nvim
     set -x EDITOR (which nvim)
     alias vim='nvim'
     alias vi='nvim'
+
+    function sudo
+        if test "$argv[1]" = nano
+            command sudo nvim $argv[2..-1]
+        else
+            command sudo $argv
+        end
+    end
 else
     if command_exists vim
         set -x EDITOR (which vim)
         alias nvim='vim'
         alias vi='vim'
+        function sudo
+            if test "$argv[1]" = nano
+                command sudo vim $argv[2..-1]
+            else
+                command sudo $argv
+            end
+        end
     else
         echo "Neither neovim nor vim are installed"
     end
