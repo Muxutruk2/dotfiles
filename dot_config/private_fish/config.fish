@@ -44,4 +44,4 @@ silent_add_path "$HOME/.cargo/bin" "$HOME/.local/bin" "$HOME/.config/emacs/bin"
 if_command_run pyenv 'pyenv init - | source'
 if_command_run fish_hybrid_key_bindings fish_hybrid_key_bindings
 source_if_exists "$HOME/.cargo/env.fish"
-git_clone_if_not_exists "$HOME/.tmux/plugins/tpm/tpm" "https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm"
+git_clone_if_not_exists "$HOME/.tmux/plugins/tpm/tpm" "https://github.com/tmux-plugins/tpm"
