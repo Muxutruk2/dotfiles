@@ -6,25 +6,24 @@ endif
 
 call plug#begin()
 
-Plug 'morhetz/gruvbox'
-Plug 'vim-syntastic/syntastic'
-Plug 'arzg/vim-sh'
-Plug 'tpope/vim-commentary'
-Plug 'vim-scripts/bash-support.vim'
-Plug 'mattn/emmet-vim'
-Plug 'othree/html5.vim'
-Plug 'ap/vim-css-color'
-Plug 'chr4/nginx.vim'
-Plug 'chrisbra/csv.vim'
-Plug 'mattn/vim-gist'
+" Theme
+Plug 'catppuccin/vim', { 'as': 'catppuccin' }
+
+" Essentials
+Plug 'tpope/vim-commentary'   " For commenting
+Plug 'arzg/vim-sh'            " Improved shell syntax
 
 call plug#end()
 
 syntax on
-filetype indent off
+filetype plugin indent on
 
-colorscheme gruvbox
+" Theme
+colorscheme catppuccin_mocha
+let g:catppuccin_flavour = 'mocha'
 set background=dark
+
+" UI settings
 set number
 set relativenumber
 set cursorline
@@ -32,20 +31,27 @@ set showcmd
 set ruler
 set laststatus=2
 set showmatch
+
+" Indentation
 set tabstop=4
 set shiftwidth=4
 set expandtab
 set autoindent
 set smartindent
+
+" Search
 set ignorecase
 set smartcase
 set hlsearch
 set incsearch
 set lazyredraw
+
+" Performance
 set ttyfast
+
+" Misc
 nnoremap <Space> :noh<CR>
 set autowrite
 set nobackup
 set nowritebackup
 set noswapfile
-
