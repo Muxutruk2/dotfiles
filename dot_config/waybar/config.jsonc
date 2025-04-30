@@ -16,7 +16,9 @@
         "hyprland/window"
     ],
     "modules-center": [
-        "clock"
+        "custom/spacer",
+        "clock",
+        "custom/spacer"
     ],
     "modules-right": [
         "pulseaudio",
