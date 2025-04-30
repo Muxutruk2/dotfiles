@@ -137,7 +137,7 @@
             ]
         },
         "on-click": "pavucontrol"
-    },
+    }
     // "custom/media": {
     //   "format": "{icon} {}",
     //   "return-type": "json",
