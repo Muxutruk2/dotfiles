@@ -1,5 +1,3 @@
-general.import = ["~/.config/alacritty/themes/themes/gruvbox_dark.toml"]
-
 [env]
 TERM = "xterm-256color"
 
