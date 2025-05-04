@@ -1,0 +1,13 @@
+shell fish
+repaint_delay 13 
+font_family      CaskaydiaCove Nerd Font Mono
+bold_font        auto
+italic_font      auto
+bold_italic_font auto
+font_size        12.0
+background_opacity 0.9
+background #1E1E2E
+include ~/.config/kitty/themes/catppuccin-mocha.conf
+startup_session = default
+tab_bar_enabled no
+map alt+a launch --type=overlay kitty +kitten launcher
