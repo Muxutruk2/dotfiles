@@ -40,6 +40,9 @@ set -x XDG_VIDEOS_DIR "$HOME/Videos"
 # QT Config
 set -x QT_QPA_PLATFORMTHEME qt5ct
 
+set -x GTK_THEME "catppuccin-mocha-sapphire-standard+default"
+
+
 silent_add_path "$HOME/.cargo/bin" "$HOME/.local/bin" "$HOME/.config/emacs/bin"
 if_command_run pyenv 'pyenv init - | source'
 if_command_run fish_hybrid_key_bindings fish_hybrid_key_bindings
