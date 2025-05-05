@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
 
-filename="$XDG_PICTURES_DIR/screenshot_$(date +'%Y-%m-%d_%H-%M-%S').png"
-
+filename="$XDG_PICTURES_DIR/Screenshots/$(date +'%Y-%m-%d_%H-%M-%S').png"
 area=$(slurp)
 
-[ -n "$area" ] && grim -g "$area" "$filename" && notify-send "Screenshot saved" "$filename"
+if [ -n "$area" ]; then
+    grim -g "$area" "$filename" &&
+        wl-copy <"$filename" &&
+        notify-send "Screenshot copied to clipboard" "$filename"
+fi
