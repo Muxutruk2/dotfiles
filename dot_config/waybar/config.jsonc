@@ -6,10 +6,8 @@
     "margin-top": 6,
     "margin-left": 10,
     "margin-right": 10,
-    "height": 40, // Waybar height (to be removed for auto height)
-    // "width": 1280, // Waybar width
-    "spacing": 5, // Gaps between modules
-    // Choose the order of the modules
+    "height": 40,
+    "spacing": 5,
     "modules-left": [
         "custom/spacer",
         "hyprland/workspaces",
