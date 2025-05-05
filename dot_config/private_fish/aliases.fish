@@ -1,6 +1,8 @@
-function silent_add_path --argument-names dirs --description 'Silently adds directories to the PATH if they exist.'
-    for dir in $dirs
-        test -d $dir; and fish_add_path $dir
+function silent_add_path --description 'Silently adds directories to the PATH if they exist.'
+    for dir in $argv
+        if test -d "$dir"
+            fish_add_path "$dir" >/dev/null 2>&1
+        end
     end
 end
 
@@ -36,7 +38,7 @@ end
 if command_exists eza
     and not is_no_de
     alias ls='eza --icons --color=always'
-    alias lls='ls --icons --color=always'
+    alias lls='ls --color=always'
 end
 
 if command_exists bat
