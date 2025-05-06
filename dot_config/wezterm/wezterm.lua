@@ -2,9 +2,6 @@ local wezterm = require("wezterm")
 
 local config = wezterm.config_builder()
 
-local hyperlinks = require("hyperlinks")
-hyperlinks.setup()
-
 -- color_scheme
 config.color_scheme = "Catppuccin Mocha"
 
