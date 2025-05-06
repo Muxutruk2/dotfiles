@@ -10,4 +10,8 @@ README.md
 .local/share/fish/
 .cache/fish/
 
+{{ if eq .chezmoi.hostname "nixos" }}
+.config/gtk-3.0/
+.config/gtk-4.0/
+{{ end }}
 
