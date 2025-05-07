@@ -14,4 +14,5 @@ return {
   require("plugins.snacks"),
   require("plugins.neotree"),
   require("plugins.flash"),
+  require("plugins.none-ls"),
 }
