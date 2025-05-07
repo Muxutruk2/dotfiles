@@ -2,20 +2,26 @@
 -- LSP setup
 
 return {
-  {
-    "williamboman/mason.nvim",
-    enabled = false,
-  },
-  {
-    "williamboman/mason-lspconfig.nvim",
-    enabled = false,
-  },
-  {
     "neovim/nvim-lspconfig",
     opts = {
-      -- prevent LazyVim from auto-configuring any servers
-      servers = {},
-      setup = {},
+        servers = {
+            lua_ls = {},
+            rust_analyzer = {},
+            pylsp = {
+                settings = {
+                    pylsp = {
+                        plugins = {
+                            pylint = {
+                                enabled = true,
+                                executable = "pylint",         -- optional if pylint is in PATH
+                            },
+                            pycodestyle = { enabled = false }, -- optional, avoids duplicate linting
+                            mccabe = { enabled = false },
+                            pyflakes = { enabled = false },
+                        },
+                    },
+                },
+            }
+        },
     },
-  },
 }
