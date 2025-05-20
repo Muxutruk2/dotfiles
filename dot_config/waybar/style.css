@@ -52,10 +52,10 @@ window#waybar {
     padding-right: 10px;
     background-color: @background;
     color: @foreground;
-    border-radius: 12px;
+    border-radius: 0px;
     margin: 6px 20px;  
     padding: 4px 10px;
-    border: 2px solid @border;
+    border-bottom: 2px solid @border;
     transition: background-color 0.5s ease;
 }
 
