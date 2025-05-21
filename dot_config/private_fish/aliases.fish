@@ -28,7 +28,7 @@ function git_clone_if_not_exists --argument-names path repo_url --description 'C
 end
 
 function is_no_de --description 'Checks if the current shell is running in a bare-bones terminal'
-    if not set -q DISPLAY
+    if test "$TERM" = linux
         return 0
     end
 
