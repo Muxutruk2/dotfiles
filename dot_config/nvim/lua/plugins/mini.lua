@@ -1,36 +1,7 @@
 return {
-	{
-		"echasnovski/mini.nvim",
-		version = "*",
-		config = function()
-			require("mini.align").setup()
-			require("mini.basics").setup()
-			require("mini.bracketed").setup()
-			require("mini.bufremove").setup()
-			require("mini.comment").setup()
-			require("mini.completion").setup()
-			require("mini.cursorword").setup()
-			require("mini.files").setup()
-			require("mini.fuzzy").setup()
-			require("mini.hipatterns").setup()
-			require("mini.indentscope").setup()
-			require("mini.jump").setup()
-			require("mini.jump2d").setup()
-			require("mini.map").setup()
-			require("mini.misc").setup()
-			require("mini.move").setup()
-			require("mini.notify").setup()
-			require("mini.operators").setup()
-			require("mini.pairs").setup()
-			require("mini.pick").setup()
-			require("mini.sessions").setup()
-			require("mini.splitjoin").setup()
-			require("mini.starter").setup()
-			require("mini.statusline").setup()
-			require("mini.surround").setup()
-			require("mini.tabline").setup()
-			require("mini.test").setup()
-			require("mini.trailspace").setup()
-		end,
-	},
+	"echasnovski/mini.nvim",
+	version = false,
+	config = function()
+		require("mini.icons").setup()
+	end,
 }
