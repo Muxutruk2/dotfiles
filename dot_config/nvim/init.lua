@@ -1,5 +1,12 @@
 require("config.lazy")
 
+-- Clipboard
+vim.opt.clipboard = "unnamedplus"
+
+-- Indenting
+vim.api.nvim_set_keymap('x', '>', '>gv', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('x', '<', '<gv', { noremap = true, silent = true })
+
 -- Tab stuff
 vim.opt.expandtab = false
 vim.opt.tabstop = 2
