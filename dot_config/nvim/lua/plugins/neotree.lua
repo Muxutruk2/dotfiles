@@ -1,4 +1,16 @@
 return {
   "nvim-neo-tree/neo-tree.nvim",
-  enabled = false,
+  branch = "v3.x",
+  dependencies = {
+    "nvim-lua/plenary.nvim",
+    "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+    "MunifTanjim/nui.nvim",
+  },
+  lazy = false,
+  opts = {
+  },
+  config = function()
+    require("neo-tree").setup()
+    vim.keymap.set('n', '<Leader>e', ':Neotree toggle<CR>', { desc = "Toggle Neo-tree", silent = true })
+  end,
 }

@@ -1,44 +1,52 @@
+vim.g.mapleader = " "
+
 require("config.lazy")
 
--- Clipboard
+require("config.lsp").setup()
+
+-- Colorscheme
+vim.cmd [[colorscheme catppuccin-mocha]]
+
+-- Use system clipboard
 vim.opt.clipboard = "unnamedplus"
 
--- Indenting
-vim.api.nvim_set_keymap('x', '>', '>gv', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('x', '<', '<gv', { noremap = true, silent = true })
-
--- Tab stuff
-vim.opt.expandtab = false
-vim.opt.tabstop = 2
-vim.opt.shiftwidth = 2
-vim.opt.softtabstop = 2
-
+-- Line numbers
 vim.opt.number = true
 vim.opt.relativenumber = true
 
-vim.diagnostic.config({ virtual_lines = true })
-vim.diagnostic.config({ virtual_text = true })
+-- Enable mouse support
+vim.opt.mouse = "a"
 
--- Buffer keybindngs
-function ReloadConfig()
-  for name, _ in pairs(package.loaded) do
-    if name:match('^user') or name:match('^plugins') or name:match('^settings') then
-      package.loaded[name] = nil
-    end
-  end
+-- Highlight current line
+vim.opt.cursorline = true
 
-  dofile(vim.fn.stdpath('config') .. '/init.lua')
-  print("Config reloaded!")
-end
+-- Enable break indent
+vim.opt.breakindent = true
 
-vim.keymap.set("n", "<leader>rr", ReloadConfig, { desc = "Reload Neovim config" })
+-- Save undo history
+vim.opt.undofile = true
 
--- keymap("n", "<leader>bb", "<cmd>e #<cr>", opts)         -- switch to the last buffer
--- keymap("n", "<leader>bd", "<cmd>bd<cr>", opts)          -- delete current buffer
--- keymap("n", "<leader>bn", "<cmd>bnext<cr>", opts)       -- next buffer
--- keymap("n", "<leader>bp", "<cmd>bprevious<cr>", opts)   -- previous buffer
--- keymap("n", "<leader>bl", "<cmd>ls<cr>:b<Space>", opts) -- list buffers and allow choosing one
--- keymap("n", "<leader>bw", "<cmd>update<cr>", opts)      -- write current buffer
--- keymap("n", "<leader>ba", "<cmd>bufdo bd<cr>", opts)    -- close all buffers
--- keymap("n", "<leader>bo", "<cmd>%bd|e#|bd#<cr>", opts)  -- close all except current buffer
--- keymap("n", "<leader>br", "<cmd>edit!<cr>", opts)       -- reload current buffer
+-- Decrease update time
+vim.opt.updatetime = 250
+vim.opt.timeoutlen = 300
+
+-- Tab and indentation
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.expandtab = true
+vim.opt.smartindent = true
+
+-- Case-insensitive searching unless \C or capital in search
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+
+-- Always show sign column
+vim.opt.signcolumn = "yes"
+
+-- Better completion experience
+vim.opt.completeopt = { "menu", "menuone", "noselect" }
+
+-- Set scroll offset
+vim.opt.scrolloff = 8
+vim.opt.sidescrolloff = 8
+
