@@ -69,10 +69,10 @@
         "format-icons": [
             " "
         ],
-        "on-click": "kitty -e sensors"
+        "on-click": "wezterm -e sensors"
     },
     "memory": {
-        "on-click": "kitty -e htop",
+        "on-click": "wezterm -e htop",
         "format": "{}% RAM"
     },
     "disk": {
@@ -102,8 +102,7 @@
         "format-ethernet": "{ipaddr}/{cidr} IPv4",
         "tooltip-format": "{ifname} via {gwaddr}",
         "format-linked": "{ifname} (No IP)",
-        "format-disconnected": "Disconnected",
-        "on-click": "kitty -e nmtui"
+        "format-disconnected": "Disconnected"
     },
     "custom/separator": {
         "format": "|",
