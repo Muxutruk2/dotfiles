@@ -22,7 +22,7 @@ function git_clone_if_not_exists --argument-names path repo_url --description 'C
         echo "Error: Path or repository URL is missing."
         return 1
     end
-    if test ! -f "$path"
+    if test ! -d "$path"
         git clone "$repo_url" "$path"
     end
 end
