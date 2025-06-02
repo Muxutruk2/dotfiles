@@ -49,3 +49,5 @@ vim.opt.completeopt = { "menu", "menuone", "noselect" }
 -- Set scroll offset
 vim.opt.scrolloff = 8
 vim.opt.sidescrolloff = 8
+
+vim.api.nvim_create_user_command('SudoWrite', 'w !sudoedit %', {})
